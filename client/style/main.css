@@ -1,0 +1,44 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: start;
+}
+#gamepane {
+    position: relative;
+    background-color: #000000;
+    flex-grow: 1;
+}
+#debugpane {
+    position: relative;
+    background-color: #FFFFFF;
+    width: 25%;
+}
+
+.noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.hidden {
+    display: none !important;
+}
+.infolabel {
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+}

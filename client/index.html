@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+        <title>Locz</title>
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/gamepane.css">
+        <link rel="stylesheet" href="style/debugpane.css">
+        <link rel="stylesheet" href="style/startmenu.css">
+    </head>
+    <body>
+        <div id="start" class="noselect">
+            <label class="infolabel">Scale Resolution:</label>
+                <input type="number" id="scalefactor" min="1" max="100" value="100" class="infolabel">
+            <label class="infolabel">Debug Mode:</label>
+                <input type="checkbox" id="debugmode">
+            <div id="startbutton" class="infolabel startbuttonloading">Loading...</div>
+        </div>
+        <div id="gamepane">
+            <div id="pauseoverlay" class="infolabel hidden noselect"></div>
+            <canvas id="viewport"></canvas>
+            <div id="hud" class="infolabel noselect"></div>
+        </div>
+        <div id="debugpane" class="hidden">
+            <table id="debugmsgs">
+                <tr>
+                    <th>Type</th>
+                    <th>Origin</th>
+                    <th>Message</th>
+                </tr>
+            </table>
+        </div>
+        <script type="module">
+            import { add_message } from './error_logger.js';
+            window.addEventListener('error', (event) => {
+                add_message(
+                    'ERROR(JS)',
+                    '' + event.filename + ':' + event.lineno + ':' + event.colno,
+                    '' + event.message
+                );
+            });
+            window.log_message = function(msg) {
+                add_message('LOG(JS)', 'unk', msg);
+            };
+        </script>
+        <script type="module" src="main.js"></script>
+    </body>
+</html>

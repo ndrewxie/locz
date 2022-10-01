@@ -1,0 +1,10 @@
+[package]
+name = "loczlib"
+version = "0.1.0"
+authors = ["ykS"]
+edition = "2021"
+
+[build-dependencies]
+png = "0.17.6"
+
+[dependencies]

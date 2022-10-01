@@ -1,0 +1,32 @@
+#start {
+    z-index: 999999;
+    
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    grid-row-end: span 2;
+    gap: 10px;
+
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #D3D3D3;
+}
+#scalefactor {
+    text-align: center;
+}
+#startbutton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+.startbuttonloading {
+    background-color: #363636 !important;
+}
